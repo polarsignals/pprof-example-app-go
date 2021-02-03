@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: pprof-example-app-go
+  name: pprof-example-app-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: pprof-example-app-go
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: pprof-example-app-go
+    spec:
+      containers:
+      - name: pprof-example-app-go
+        image: quay.io/polarsignals/pprof-example-app-go:v0.1.0
+        ports:
+        - name: http
+          containerPort: 8080
