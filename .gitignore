@@ -1,1 +1,2 @@
-pprof-example-app-go
+pprof-example-app-go*
+*.pprof
