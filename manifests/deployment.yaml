@@ -20,3 +20,17 @@ spec:
         ports:
         - name: http
           containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pprof-example-app-go
+  labels:
+    app.kubernetes.io/name: pprof-example-app-go
+spec:
+  selector:
+    app.kubernetes.io/name: pprof-example-app-go
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
