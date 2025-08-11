@@ -16,10 +16,14 @@ spec:
     spec:
       containers:
       - name: pprof-example-app-go
-        image: quay.io/polarsignals/pprof-example-app-go:v0.1.0
+        image: quay.io/polarsignals/pprof-example-app-go:v0.5.0
         ports:
         - name: http
           containerPort: 8080
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
 ---
 apiVersion: v1
 kind: Service
